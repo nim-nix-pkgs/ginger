@@ -11,6 +11,7 @@
   inputs.src-ginger-master.ref   = "refs/heads/master";
   inputs.src-ginger-master.owner = "Vindaar";
   inputs.src-ginger-master.repo  = "ginger";
+  inputs.src-ginger-master.dir   = "";
   inputs.src-ginger-master.type  = "github";
   
   inputs."chroma".owner = "nim-nix-pkgs";

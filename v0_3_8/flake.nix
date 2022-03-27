@@ -11,6 +11,7 @@
   inputs.src-ginger-v0_3_8.ref   = "refs/tags/v0.3.8";
   inputs.src-ginger-v0_3_8.owner = "Vindaar";
   inputs.src-ginger-v0_3_8.repo  = "ginger";
+  inputs.src-ginger-v0_3_8.dir   = "";
   inputs.src-ginger-v0_3_8.type  = "github";
   
   inputs."chroma".owner = "nim-nix-pkgs";
