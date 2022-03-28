@@ -11,7 +11,6 @@
   inputs.src-ginger-v0_2_6.ref   = "refs/tags/v0.2.6";
   inputs.src-ginger-v0_2_6.owner = "Vindaar";
   inputs.src-ginger-v0_2_6.repo  = "ginger";
-  inputs.src-ginger-v0_2_6.dir   = "";
   inputs.src-ginger-v0_2_6.type  = "github";
   
   inputs."chroma".owner = "nim-nix-pkgs";
@@ -21,6 +20,14 @@
   inputs."chroma".type  = "github";
   inputs."chroma".inputs.nixpkgs.follows = "nixpkgs";
   inputs."chroma".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
+  
+  inputs."github.com/vindaar/seqmath".owner = "nim-nix-pkgs";
+  inputs."github.com/vindaar/seqmath".ref   = "master";
+  inputs."github.com/vindaar/seqmath".repo  = "github.com/vindaar/seqmath";
+  inputs."github.com/vindaar/seqmath".dir   = "";
+  inputs."github.com/vindaar/seqmath".type  = "github";
+  inputs."github.com/vindaar/seqmath".inputs.nixpkgs.follows = "nixpkgs";
+  inputs."github.com/vindaar/seqmath".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
   
   inputs."cairo".owner = "nim-nix-pkgs";
   inputs."cairo".ref   = "master";
