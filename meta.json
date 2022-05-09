@@ -7,7 +7,7 @@
   "license": "MIT",
   "web": "https://github.com/Vindaar/ginger",
   "refs": [
-    "fatal: unable to access 'https://github.com/Vindaar/ginger/': Could not resolve host: github.com",
+    "fatal: unable to access 'https://github.com/Vindaar/ginger/': Failed to connect to github.com port 443 after 130357 ms: Network is unreachable",
     ""
   ],
   "heads": []
