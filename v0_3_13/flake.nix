@@ -7,11 +7,11 @@
   inputs.flakeNimbleLib.type  = "github";
   inputs.flakeNimbleLib.inputs.nixpkgs.follows = "nixpkgs";
   
-  inputs.src-ginger-v0_3_5.flake = false;
-  inputs.src-ginger-v0_3_5.ref   = "refs/tags/v0.3.5";
-  inputs.src-ginger-v0_3_5.owner = "Vindaar";
-  inputs.src-ginger-v0_3_5.repo  = "ginger";
-  inputs.src-ginger-v0_3_5.type  = "github";
+  inputs.src-ginger-v0_3_13.flake = false;
+  inputs.src-ginger-v0_3_13.ref   = "refs/tags/v0.3.13";
+  inputs.src-ginger-v0_3_13.owner = "Vindaar";
+  inputs.src-ginger-v0_3_13.repo  = "ginger";
+  inputs.src-ginger-v0_3_13.type  = "github";
   
   inputs."chroma".owner = "nim-nix-pkgs";
   inputs."chroma".ref   = "master";
@@ -45,6 +45,14 @@
   inputs."latexdsl".inputs.nixpkgs.follows = "nixpkgs";
   inputs."latexdsl".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
   
+  inputs."pixie".owner = "nim-nix-pkgs";
+  inputs."pixie".ref   = "master";
+  inputs."pixie".repo  = "pixie";
+  inputs."pixie".dir   = "4_4_0";
+  inputs."pixie".type  = "github";
+  inputs."pixie".inputs.nixpkgs.follows = "nixpkgs";
+  inputs."pixie".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
+  
   inputs."shell".owner = "nim-nix-pkgs";
   inputs."shell".ref   = "master";
   inputs."shell".repo  = "shell";
@@ -53,16 +61,24 @@
   inputs."shell".inputs.nixpkgs.follows = "nixpkgs";
   inputs."shell".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
   
+  inputs."github.com/zetashift/fontim".owner = "nim-nix-pkgs";
+  inputs."github.com/zetashift/fontim".ref   = "master";
+  inputs."github.com/zetashift/fontim".repo  = "github.com/zetashift/fontim";
+  inputs."github.com/zetashift/fontim".dir   = "";
+  inputs."github.com/zetashift/fontim".type  = "github";
+  inputs."github.com/zetashift/fontim".inputs.nixpkgs.follows = "nixpkgs";
+  inputs."github.com/zetashift/fontim".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
+  
   outputs = { self, nixpkgs, flakeNimbleLib, ...}@deps:
   let 
     lib  = flakeNimbleLib.lib;
-    args = ["self" "nixpkgs" "flakeNimbleLib" "src-ginger-v0_3_5"];
+    args = ["self" "nixpkgs" "flakeNimbleLib" "src-ginger-v0_3_13"];
     over = if builtins.pathExists ./override.nix 
            then { override = import ./override.nix; }
            else { };
   in lib.mkRefOutput (over // {
     inherit self nixpkgs ;
-    src  = deps."src-ginger-v0_3_5";
+    src  = deps."src-ginger-v0_3_13";
     deps = builtins.removeAttrs deps args;
     meta = builtins.fromJSON (builtins.readFile ./meta.json);
   } );
